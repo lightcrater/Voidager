@@ -20,12 +20,6 @@ gravity = Vector2(0, 0)
 
 [node name="Thruster" parent="." instance=ExtResource("3_3lwhu")]
 position = Vector2(0, 16)
-stats = {
-"accel": 962,
-"decel": 0,
-"health": 0,
-"maxspd": 10
-}
 
 [node name="Thruster2" parent="." instance=ExtResource("3_3lwhu")]
 position = Vector2(-16, 16)

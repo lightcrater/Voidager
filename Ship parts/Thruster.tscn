@@ -16,10 +16,10 @@ position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_884ho")
 script = ExtResource("1_ewv3m")
 stats = {
-"accel": 2,
+"accel": 1,
 "decel": 0,
 "health": 0,
-"maxspd": 10
+"maxspd": 100
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]

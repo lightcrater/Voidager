@@ -16,20 +16,13 @@ func _physics_process(delta):
 	
 	velocity = dir.rotated(rotation) * speed
 	
-	if dir: # acceleration
-		speed = min(maxspd, max(-maxspd, speed))
-		print(speed," ",accel," ",maxspd," ",decel)
-
-	#else: # deceleration
-		## if speed > 0 and moving right set the max speed to 0 over time by reducing speed variable
-		#if speed > 0:
-			#speed = max(0, speed - decel)
-		## if speed < 0 and moving left set the max speed to 0 over time by increasing speed variable
-		#elif speed < 0:
-			#speed = min(0, speed + decel)
-	
-	
-	
+	if dir: 
+		speed += accel
+		speed = clamp(speed, 0, maxspd)  # Limit speed to maxspd
+	else:
+		speed -= decel
+		print(speed)
+		
 	move_and_slide()
 
 func update_stats(stats_array):
