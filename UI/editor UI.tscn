@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bh10l8knbavlw"]
+[gd_scene load_steps=7 format=3 uid="uid://bh10l8knbavlw"]
 
 [ext_resource type="PackedScene" uid="uid://c77g3mi42mimv" path="res://Ship parts/Thruster.tscn" id="1_synoo"]
+[ext_resource type="Script" path="res://UI/Partlist.gd" id="2_8i13w"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_jhaiy"]
+[sub_resource type="Theme" id="Theme_mhuc7"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gmoyr"]
 viewport_path = NodePath("SubViewport")
 
-[node name="Control" type="Control"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_jlffs"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ac37c"]
+viewport_path = NodePath("SubViewport")
+
+[node name="EditorUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,12 +27,20 @@ size = Vector2i(32, 32)
 
 [node name="Thruster" parent="SubViewport" instance=ExtResource("1_synoo")]
 
-[node name="ItemList" type="ItemList" parent="."]
+[node name="Partlist" type="ItemList" parent="."]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 256.0
+offset_right = 384.0
 grow_vertical = 2
-item_count = 1
-item_0/text = "object 1"
-item_0/icon = SubResource("ViewportTexture_jhaiy")
+theme = SubResource("Theme_mhuc7")
+item_count = 3
+max_columns = 2
+icon_scale = 2.0
+item_0/text = "Thruster"
+item_0/icon = SubResource("ViewportTexture_gmoyr")
+item_1/text = "rotating thruster"
+item_1/icon = SubResource("ViewportTexture_jlffs")
+item_2/text = "test"
+item_2/icon = SubResource("ViewportTexture_ac37c")
+script = ExtResource("2_8i13w")

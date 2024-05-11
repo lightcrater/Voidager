@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://clrt1675e438q"]
+
+[ext_resource type="Script" path="res://Ship parts/Part_stats.gd" id="1_oc20h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ao02"]
+size = Vector2(16, 16)
+
+[node name="Cockpit" type="CollisionShape2D"]
+shape = SubResource("RectangleShape2D_6ao02")
+script = ExtResource("1_oc20h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 10.0
+offset_bottom = 8.0
+color = Color(0.196652, 0.719414, 0.871943, 1)
+
+[node name="Connectors" type="Node2D" parent="."]
+visible = false
+
+[node name="Connector left" type="Marker2D" parent="Connectors"]
+position = Vector2(-8, 0)
+
+[node name="Connector right" type="Marker2D" parent="Connectors"]
+position = Vector2(8, 0)
+
+[node name="Connector up" type="Marker2D" parent="Connectors"]
+position = Vector2(0, -8)
+
+[node name="Connector down" type="Marker2D" parent="Connectors"]
+position = Vector2(0, 8)
